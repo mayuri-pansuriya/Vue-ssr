@@ -1,0 +1,9 @@
+// Here you can add other styles
+
+.property__img--box {
+  height: 170px;
+}
+.required-field::after {
+  content: "*";
+  color: red;
+}

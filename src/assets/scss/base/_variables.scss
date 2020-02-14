@@ -1,0 +1,29 @@
+$colors: (
+    white: (
+        base: #FFFFFF
+    ),
+    black: (
+        base: #000000,        
+    ),
+    blue: (
+        light: #DAF6FF,
+        base: #268CAB,
+        dark: #28485E,
+    ),
+    gray: (
+        darker: #666666,
+        dark: #BDBDBD,
+        base: #EBEBEB,
+        light: #F2F2F2
+    ),
+    green: (
+        base: #76B548
+    ),
+    yellow: (
+        base: #F2C94C
+    )
+);
+
+@function color($color, $tone: 'base') {
+    @return map-get(map-get($colors, $color), $tone);
+}

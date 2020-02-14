@@ -1,0 +1,28 @@
+// If you want to override variables do it here
+
+// Import styles
+
+@import 'vendors/normalize';
+@import 'vendors/bootstrap-grid';
+@import 'base/variables';
+@import 'base/mixin';
+@import 'base/utilities';
+@import 'base/fonts'; 
+@import 'base/base';
+@import 'components/buttons';
+@import 'components/formControl';
+@import 'components/modal';
+@import 'components/dropdown';
+@import 'components/progress';
+@import 'components/table';
+@import 'components/widget';
+@import 'layouts/header';
+@import 'layouts/footer';
+@import 'components/nav';
+@import 'components/hero';
+@import 'components/search';
+@import 'components/content';
+@import 'components/result';
+@import 'components/map';
+@import 'components/listingDetails';
+@import 'components/pdfView';

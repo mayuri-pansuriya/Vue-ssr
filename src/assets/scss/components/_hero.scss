@@ -1,0 +1,19 @@
+.hero {
+    background-size: cover;
+    background-position: center;
+    min-height: 600px;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+        background-color: color(black);
+        @include contentFull();
+        pointer-events: none;
+        opacity: .5;
+        z-index: -1;
+    }
+
+    @media (min-width: 768px) {
+        height: 100vh;
+    }
+}

@@ -4,7 +4,7 @@ import Foo1 from "./Foo1";
 import Router from "vue-router";
 const Bar = { template: "<div>bar</div>" };
 const Foo = { template: "<div>foo</div>" };
-
+import ClientDashBoard from "./views/client/Dashboard";
 Vue.use(Router);
 
 export function createRouter() {
@@ -13,8 +13,8 @@ export function createRouter() {
     routes: [
       {
         path: "/",
-        name: "Hello",
-        component: test
+        name: "dashBoard",
+        component: ClientDashBoard
       },
       {
         path: "/test/:userId",

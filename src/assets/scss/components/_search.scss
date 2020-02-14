@@ -1,0 +1,140 @@
+.search {
+    margin: auto 0;
+
+    &__heading {
+        @include font(28, semibold);
+        color: color(green);
+        line-height: 34px;
+        margin-bottom: 28px;
+    }
+
+    &__subText {
+        color: color(white);
+        @include font(24, regular);
+        line-height: 36px;
+        margin-bottom: 76px;
+        max-width: 760px;
+    }
+
+    &__fields {
+        margin-bottom: 28px;
+
+        .no-gutters {
+
+            .formControl {
+                background-clip: border-box;
+                border-radius: 0;
+                transition: 0.2s ease all;
+
+                @media (min-width: 1200px) {
+                    &:focus {
+                        border-radius: 4px !important;
+                        transform: scaleY(1.1);
+                        transition: 0.2s ease all;
+                    }    
+                }
+            }
+
+            [class*="col-"] {
+                
+                &:first-child {
+                    border-right: 2px solid color(gray);
+                    
+                    .formControl {
+                        border-radius: 4px 0 0 4px;
+                    }
+                }
+        
+                &:last-child {
+                    border-left: 2px solid color(gray);
+                    
+                    .formControl {
+                        border-radius: 0 4px 4px 0;
+                    }
+                }
+            }
+        }
+
+        &--innerPage {
+            margin-bottom: 20px;
+            
+            .fieldFloating {
+                box-shadow: 0px 4px 4px color(gray);
+            }
+        }
+    }
+
+    &__result {
+        @extend %cardBlack;
+        @include font(16, semibold);
+        line-height: 20px;
+        color: color(blue);
+        padding: 15px 12px;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            margin-left: 28px;
+        }
+    }
+
+    @media (max-width: 1199.98px) {
+        
+        &__fields {
+            
+            &--innerPage {
+                margin-bottom: 0;
+                    
+                .fieldFloating {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        &__heading {
+            margin: 40px 0 15px;
+            @include font(24, semibold);
+            line-height: 30px;
+        }
+
+        &__subText {
+            @include font(20, regular);
+            line-height: 30px;
+            margin-bottom: 26px;
+        }
+
+        &__result {
+            margin-top: 10px;
+        }
+
+        &__fields {
+            margin-bottom: 18px;
+
+            .no-gutters { 
+
+                [class*="col-"] {
+                
+                    &:nth-child(n) {
+                        border: none;
+
+                        .formControl { 
+                            border-radius: 4px;
+                        }
+                    }
+                }
+            }
+
+            &--innerPage {
+                    
+                .fieldFloating {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        &__field {
+            margin-top: 10px;
+        }
+    }
+}

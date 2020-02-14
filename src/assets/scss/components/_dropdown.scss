@@ -1,0 +1,82 @@
+.dropdown {
+    position: relative;
+
+    &__toggle {
+        cursor: pointer;
+        color: color(black);
+        @include font(16, semibold);
+        background: none;
+        border: none;
+        padding: 0;
+        line-height: normal;
+
+        &--hasArrow {
+            padding-right: 20px;
+            position: relative;
+
+            .fas {
+                position: absolute;
+                right: 0;
+                top: 2px;
+            }
+
+            // &::after {
+            //     position: absolute;
+            //     content: '\f0d7';
+            //     right: 0;
+            //     font-family: "FontAwesome";
+            //     font-size: 20px;
+            //     margin-top: 1px;
+            // }
+        }
+    }
+
+    &__menu {
+        background-color: color(white);
+        box-shadow: 0px 4px 4px color(gray);
+        border-radius: 4px;
+        position: absolute;
+        min-width: 200px;
+        width: 100%;
+        top: 100%;
+        right: 0;
+        z-index: 10;
+        padding: 8px 0;
+        transform: translateY(10px);
+        transition: all 250ms ease-in;
+        display: none;
+    }
+
+    &__link {
+        color: color(blue);
+        @include font(16);
+        display: block;
+        padding: 10px 18px;
+
+        &:hover {
+            background-color: color(blue);
+            color: color(white);
+        }
+    }
+
+    &__divider {
+        background-color: color(gray);
+        height: 1px;
+        overflow: hidden;
+        margin: 6px 0;
+    }
+
+    &.is-dropdownOpen {
+
+        .dropdown__menu {
+            display: block;
+        }
+
+        .dropdown__toggle--hasArrow {
+            
+            .fa-caret-down:before {
+                content: '\f0d8';
+            }
+        }
+    }
+}

@@ -1,0 +1,43 @@
+.pdfView {
+  box-shadow: 0px 4px 4px color(gray);
+  margin-bottom: 20px;
+
+  &__header {
+    background-color: rgba(black, 0.8);
+    border-radius: 4px 4px 0 0;
+    color: color(white);
+    @include font(18, medium);
+    line-height: 22px;
+    padding: 17px 24px;
+  }
+
+  &__revision {
+    @include font(16, regular);
+    line-height: normal;
+
+    strong {
+      @include font(14, semibold);
+      line-height: 17px;
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__body {
+    background-color: color(white);
+    border-radius: 0 0 4px 4px;
+    padding: 22px;
+  }
+
+  @media (min-width: 992px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 767.98px) {
+    margin-bottom: 10px;
+
+    &__revision {
+      margin-top: 10px;
+    }
+  }
+}

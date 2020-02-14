@@ -1,0 +1,66 @@
+.widget {
+    background: color(white);
+    border-top: 2px solid color(gray);
+    padding: 17px 20px;
+
+    &:first-child {
+        border-radius: 4px 4px 0 0;
+        border-top: none;
+    }
+
+    &--date {
+        padding: 0;
+    }
+
+    &--green {
+        box-shadow: 7px 0 0 color(green) inset;
+        padding-left: 30px;
+    }
+
+    &--yellow {
+        box-shadow: 7px 0 0 color(yellow) inset;
+        padding-left: 30px;
+    }
+
+    &--gray {
+        box-shadow: 7px 0 0 color(gray, dark) inset;
+        padding-left: 30px;
+    }
+
+    &__title {
+        @include font(14, semibold);
+        color: color(blue, dark);
+        margin-bottom: 17px;
+        line-height: 17px;
+
+        span {
+            @include font(12, regular);
+        }
+    }
+
+    &:last-child,
+    &:last-of-type {
+        border-radius: 0 0 4px 4px;
+        border-bottom: none;
+        margin-bottom: 20px;
+    }
+
+    &--total {
+        background-color: color(blue, dark);
+        border-top: none;
+        border-radius: 0 0 4px 4px;
+        color: color(white);
+        @include font(14, medium);
+        margin-bottom: 20px;
+    }
+
+    .eCheckbox + .eCheckbox,
+    .eRadio + .eRadio {
+        margin-top: 17px;
+    }
+
+    .btn--link {
+        display: inline-block;
+        margin: 17px 0 2px 27px;
+    }
+}

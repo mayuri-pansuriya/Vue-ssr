@@ -1,0 +1,100 @@
+%cardBlack {
+    background-color: rgba(0,0,0,0.7);
+    border: 1px solid color(gray, darker);
+    border-radius: 4px;
+}
+%cardWhite {
+    background-color: color(white);
+    box-shadow: 0px 4px 4px color(gray);
+    border-radius: 4px;
+}
+.cardWhite {
+    background-color: color(white);
+    box-shadow: 0px 4px 4px color(gray);
+    border-radius: 4px;
+}
+.colorWhite {
+    color: color(white);
+}
+.colorBlack {
+    color: color(black);
+}
+.colorGreen {
+    color: color(green);
+}
+.colorYellow {
+    color: color(yellow);
+}
+.colorBlue {
+    color: color(blue);
+
+    &--dark {
+        color: color(blue, dark);
+    }
+
+    &--light {
+        color: color(blue, light);
+    }
+}
+.colorGray {
+    color: color(gray);
+
+    &--darker {
+        color: color(gray, darker);
+    }
+
+    &--dark {
+        color: color(gray, dark);
+    }
+
+    &--light {
+        color: color(gray, light);
+    }
+}
+
+.position-relative {
+    position: relative;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.textRight {
+    text-align: right;
+}
+
+.w50 {
+    width: 50%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.mb10 {
+    margin-bottom: 10px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.mlAuto {
+    margin-left: auto !important;
+}
+
+.mrAuto {
+    margin-right: auto !important;
+}
+
+@media (max-width: 767.98px) {
+    .mbMobile10,
+    .mb20 {
+        margin-bottom: 10px;
+    }   
+}
