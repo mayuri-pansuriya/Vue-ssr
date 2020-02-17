@@ -7,7 +7,7 @@
     }"
   >
     <header-component></header-component>
-    <!-- <landing-page v-if="isSearchRequired"></landing-page> -->
+    <landing-page v-if="isSearchRequired"></landing-page>
     <footer class="footer" v-if="isSearchRequired">
       <div class="row">
         <div class="col-lg-4">
@@ -41,13 +41,13 @@
 
 <script>
 import HeaderComponent from "../../containers/client/Header";
-// import LandingPage from "./LandingPage";
-import "../../assets/css/style.css"
+import LandingPage from "./LandingPage";
+import "../../assets/css/style.css";
 export default {
   name: "Dashboard",
   components: {
-    HeaderComponent
-    // LandingPage
+    HeaderComponent,
+    LandingPage
   },
   computed: {
     isSearchRequired() {

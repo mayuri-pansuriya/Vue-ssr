@@ -5,6 +5,7 @@ import Router from "vue-router";
 const Bar = { template: "<div>bar</div>" };
 const Foo = { template: "<div>foo</div>" };
 import ClientDashBoard from "./views/client/Dashboard";
+import ListProperties from "./views/client/ListProperties";
 
 import { getToken } from "./utils/auth"; // get token from cookie
 import store from "./store";
@@ -17,7 +18,15 @@ export function createRouter() {
       {
         path: "/",
         name: "dashBoard",
-        component: ClientDashBoard
+        component: ClientDashBoard,
+        children: [
+          {
+            path: "/list",
+            name: "List",
+            component: ListProperties,
+            meta: { requiresAuth: true }
+          }
+        ]
       },
       {
         path: "/test/:userId",
@@ -32,10 +41,10 @@ export function createRouter() {
     ]
   });
 
-  router.beforeEach((to, from, next) => {
+  router.beforeEach(async (to, from, next) => {
     console.info("before route ::", to.path);
     // determine whether the user has logged in
-    const hasToken = getToken();
+    const hasToken = await getToken();
     if (to.path === "/login") {
       next({ path: "/" });
     } else if (
@@ -50,9 +59,9 @@ export function createRouter() {
         // if is logged in, redirect to the home page
         next({ path: "/" });
       } else {
-        const hasGetUserInfo = store.getters.name;
+        const hasGetUserInfo = await store.getters.name;
         if (hasGetUserInfo) {
-          const hasUserRole = store.getters.role;
+          const hasUserRole = await store.getters.role;
           if (to.matched.some(record => record.meta.adminAuth)) {
             if (hasUserRole && hasUserRole === "admin") {
               next();
@@ -66,9 +75,9 @@ export function createRouter() {
           try {
             console.info("authenticate token");
             // get user info
-            store.dispatch("user/getInfo");
+            await store.dispatch("user/getInfo");
             if (to.matched.some(record => record.meta.adminAuth)) {
-              const hasUserRole = store.getters.role;
+              const hasUserRole = await store.getters.role;
               if (hasUserRole && hasUserRole === "admin") {
                 next();
               } else {
@@ -80,7 +89,7 @@ export function createRouter() {
             // next()
           } catch (error) {
             // remove token and go to login page to re-login
-            store.dispatch("user/resetToken");
+            await store.dispatch("user/resetToken");
             next(`/`);
           }
         }
@@ -89,9 +98,9 @@ export function createRouter() {
       try {
         console.info("has token");
         // get user info
-        store.dispatch("user/getInfo");
+        await store.dispatch("user/getInfo");
         if (to.matched.some(record => record.meta.adminAuth)) {
-          const hasUserRole = store.getters.role;
+          const hasUserRole = await store.getters.role;
           if (hasUserRole && hasUserRole === "admin") {
             next();
           } else {
@@ -102,7 +111,7 @@ export function createRouter() {
         }
       } catch (error) {
         // remove token and go to login page to re-login
-        store.dispatch("user/resetToken");
+        await store.dispatch("user/resetToken");
         next(`/`);
       }
     } else {
