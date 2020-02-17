@@ -1,6 +1,6 @@
 const config = {
   development: {
-    BASE_API: process.env.VUE_APP_BASE_API || "http://localhost:8000",
+    BASE_API: process.env.VUE_APP_BASE_API || "https://www.bacancy.com/ExtraSliceBackend",
     GOOGLE_API_KEY:
       process.env.VUE_APP_GOOGLE_API_KEY ||
       "AIzaSyC_KLUY2Jr4QcPR4gbBkbCzv3DGP3rb9DM",

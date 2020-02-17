@@ -42,6 +42,7 @@
 <script>
 import HeaderComponent from "../../containers/client/Header";
 // import LandingPage from "./LandingPage";
+import "../../assets/css/style.css"
 export default {
   name: "Dashboard",
   components: {

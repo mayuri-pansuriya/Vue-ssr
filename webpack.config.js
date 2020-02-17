@@ -1,9 +1,10 @@
 var path = require("path");
 var webpack = require("webpack");
-require("babel-polyfill");
+// require("babel-polyfill");
 
 module.exports = {
-  entry: ["babel-polyfill", "./src/entry-client.js"],
+  // entry: ["babel-polyfill", "./src/entry-client.js"],
+  entry: "./src/entry-client.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "/dist/",
@@ -52,7 +53,19 @@ module.exports = {
         options: {
           name: "[name].[ext]?[hash]"
         }
-      }
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "fonts/"
+            }
+          }
+        ]
+      },
     ]
   },
   resolve: {

@@ -354,6 +354,7 @@ export default {
         text: "logout successfully"
       });
       this.$router.push(`/`);
+      
     },
     openMenu() {
       let testarray = document.getElementsByClassName("test");
