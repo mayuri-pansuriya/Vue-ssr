@@ -13,7 +13,7 @@
     "start-server": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "vue": "^2.5.11",
     "vue-router": "^3.1.5",
     "vue-server-renderer": "^2.6.11",
